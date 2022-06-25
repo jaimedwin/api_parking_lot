@@ -1,0 +1,22 @@
+{
+  "name": "api_parking_lot",
+  "version": "1.0.0",
+  "description": "Technical test (back-end)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaimedwin/api_parking_lot.git"
+  },
+  "keywords": [
+    "parkint lot"
+  ],
+  "author": "Jaime Edwin Arciniegas García",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaimedwin/api_parking_lot/issues"
+  },
+  "homepage": "https://github.com/jaimedwin/api_parking_lot#readme"
+}
