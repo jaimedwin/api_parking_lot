@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
   class Type extends Model {};
 
   Type.init({
-    costPerMinute: DataTypes.STRING
+    title: DataTypes.STRING,
+    costPerMinute: DataTypes.DECIMAL(15, 2)
   }, {
     sequelize,
     modelName: 'Type',
