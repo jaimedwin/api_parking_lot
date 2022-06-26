@@ -1,26 +1,23 @@
 
 @port = 4000
-@api = http://localhost:{{port}}/api/v1/register-vehicle/
 
-### 
-GET http://localhost:4000/api/v1/
+### api-register-vehicle
+@api1 = http://localhost:{{port}}/api/v1/register-vehicle/
 
-### create task
-POST http://localhost:4000/api/v1/register-vehicle/
+### entryVehicleRecord 
+POST {{api1}}
 Content-Type: application/json
 
 { 
-  "licensePlate": "ASD-123" 
+  "licensePlate": "YTQ-852" 
 }
 
-### update task
-PUT {{api}}
+### exitVehicleRecord
+PUT {{api1}}
 Content-Type: application/json
 
 {
-  "name": "testing",
-  "done": true,
-  "projectId": "8"
+  "licensePlate": "YTQ-852"
 }
 
 

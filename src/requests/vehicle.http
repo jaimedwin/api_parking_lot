@@ -12,7 +12,7 @@ POST {{api}}
 Content-Type: application/json
 
 { 
-  "licensePlate": "WWW-888",
+  "licensePlate": "ASD-123",
   "typeId": 1
 }
 

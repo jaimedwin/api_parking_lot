@@ -5,7 +5,7 @@
 GET {{api}}
 
 ### get
-GET {{api}}/1
+GET {{api}}/100
 
 ### create
 POST {{api}}

@@ -1,6 +1,5 @@
 const { sequelize, Sequelize, DataTypes } = require('../models/index.cjs');
-//const Type = require('./type.cjs').Type;
-//const Type = require('./type.cjs');
+const Register = require('./register.cjs').Register;
 
 const Vehicle = sequelize.define(
   "Vehicles",
@@ -36,67 +35,7 @@ const Vehicle = sequelize.define(
   }
 );
 
-/*
-console.log("Dato1FromVehicle: ", Vehicle);
-console.log("Dato2FromVehicle: ", Type);
-
-Vehicle.hasMany(Type, {
-  foreinkey: "id",
-  targetKey: "typeId",
-});
-
-/*
-Vehicle.hasMany(Register, {
-  foreinkey: "vehicleId",
-  sourceKey: "id",
-});
+Vehicle.hasMany(Register, { foreinkey: "id", targetKey: "vehicleId" });
 Register.belongsTo(Vehicle, { foreinkey: "vehicleId", targetId: "id" });
-*/
 
 module.exports = { Vehicle };
-
-/*
-'use strict';
-import Sequelize from "sequelize";
-//import Type from '../models';
-const { sequelize } = require('../models/index.cjs');
-
-console.log(Sequelize)
-
-module.exports = (sequelize, DataTypes) => {
-  class Vehicle extends Model {};
-
-  Vehicle.init({
-    licensePlate: DataTypes.STRING,
-    typeId: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Vehicle',
-  });
-
-  //Vehicle.hasMany(Type, { foreignKey: 'typeId'});
-  //Type.belongsTo(Vehicle);
-  return Vehicle;
-};
-
-*/
-
-
-/*
-export default (sequelize, DataTypes) => {
-  class Vehicle extends Model {};
-
-  Vehicle.init({
-    licensePlate: DataTypes.STRING,
-    typeId: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Vehicle',
-  });
-
-  Vehicle.hasMany(Type, { foreignKey: 'typeId'});
-  Type.belongsTo(Vehicle);
-  return Vehicle;
-};
-
-*/

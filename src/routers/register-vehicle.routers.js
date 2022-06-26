@@ -7,6 +7,6 @@ import {
 const router = Router();
 
 router.post("/", entryVehicleRecord);
-router.put("/:licensePlate", exitVehicleRecord);
+router.put("/", exitVehicleRecord);
 
 export default router;
