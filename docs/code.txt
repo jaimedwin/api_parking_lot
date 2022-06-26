@@ -1,0 +1,33 @@
+//// -- LEVEL 1
+//// -- Tables and References
+
+Table Vehicles {
+  id int [pk] // primary key
+  licensePlate string
+  typeId integer [ref: > Type.id] // inline relationship (many-to-one)
+  created_at datetime [note: 'When order created'] // add column note
+  updatedAt datetime [note: 'When order created'] // add column note
+  
+}
+
+// Ref: Vehicles.typeId > products.id
+
+Table Type {
+  id int [pk] // primary key
+  title int [not null, unique]
+  costPerMinute varchar
+  created_at datetime [note: 'When order created'] // add column note
+  updatedAt datetime [note: 'When order created'] // add column note
+}
+
+
+Table Registers {
+  id int [pk]
+  
+  checkInTime datetime
+  checkOutTime datetime
+  vehicleId integer [ref: > Vehicles.id] // inline relationship (many-to-one)
+  created_at datetime [note: 'When order created'] // add column note
+  updatedAt datetime [note: 'When order created'] // add column note
+}
+

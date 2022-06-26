@@ -15,7 +15,8 @@ module.exports = {
         type: Sequelize.DATE
       },
       collectMoney: {
-        type: Sequelize.INTEGER
+        type: Sequelize.DECIMAL(15, 2),
+        defaultValue: 0.00
       },
       vehicleId: {
         type: Sequelize.INTEGER

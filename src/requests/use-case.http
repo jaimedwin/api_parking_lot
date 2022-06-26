@@ -1,0 +1,28 @@
+
+@port = 4000
+@api = http://localhost:{{port}}/api/v1/register-vehicle/
+
+### 
+GET http://localhost:4000/api/v1/
+
+### create task
+POST http://localhost:4000/api/v1/register-vehicle/
+Content-Type: application/json
+
+{ 
+  "licensePlate": "ASD-123" 
+}
+
+### update task
+PUT {{api}}
+Content-Type: application/json
+
+{
+  "name": "testing",
+  "done": true,
+  "projectId": "8"
+}
+
+
+
+
