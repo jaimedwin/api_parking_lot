@@ -6,7 +6,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
 // Routes
-import allRouters from "./routers/all.routers.js";
-app.use("/api/v1", allRouters);
+import registerVehicleRouters from "./routers/register-vehicle.routers.js";
+import vehicleRouters from "./routers/vehicle.routers.js";
+import typeRouters from "./routers/type.routers.js";
+app.use("/api/v1/register-vehicle", registerVehicleRouters);
+app.use("/api/v1/vehicle", vehicleRouters);
+app.use("/api/v1/type", typeRouters);
 
 export default app;

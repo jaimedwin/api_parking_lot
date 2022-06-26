@@ -1,8 +1,9 @@
 const { sequelize, Sequelize, DataTypes } = require('../models/index.cjs');
-const Register = require('./register.cjs');
+//const Type = require('./type.cjs').Type;
+//const Type = require('./type.cjs');
 
 const Vehicle = sequelize.define(
-  "Vehicle",
+  "Vehicles",
   {
     id: {
       allowNull: false,
@@ -10,17 +11,13 @@ const Vehicle = sequelize.define(
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    checkInTime: {
-      type: DataTypes.DATE
+    licensePlate: {
+      allowNull: false,
+      unique: true,
+      type: DataTypes.STRING
     },
-    checkOutTime: {
-      type: Sequelize.DATE
-    },
-    collectMoney: {
-      type: DataTypes.DECIMAL(15, 2),
-      defaultValue: 0.00
-    },
-    vehicleId: {
+    typeId: {
+      allowNull: false,
       type: DataTypes.INTEGER
     },
     createdAt: {
@@ -38,6 +35,15 @@ const Vehicle = sequelize.define(
     timestamps: false,
   }
 );
+
+/*
+console.log("Dato1FromVehicle: ", Vehicle);
+console.log("Dato2FromVehicle: ", Type);
+
+Vehicle.hasMany(Type, {
+  foreinkey: "id",
+  targetKey: "typeId",
+});
 
 /*
 Vehicle.hasMany(Register, {

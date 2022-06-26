@@ -1,5 +1,5 @@
 @port = 4000
-@api = http://localhost:{{port}}/api/v1/type
+@api = http://localhost:{{port}}/api/v1/vehicle
 
 ### get all
 GET {{api}}
@@ -12,18 +12,18 @@ POST {{api}}
 Content-Type: application/json
 
 { 
-  "title": "Vip102",
-  "costPerMinute": 100.00
+  "licensePlate": "WWW-888",
+  "typeId": 1
 }
 
 ### delete
-DELETE {{api}}/19
+DELETE {{api}}/5
 
 ### update
 PUT {{api}}/7
 Content-Type: application/json
 
 {
-  "title": "Vip241",
-  "costPerMinute": 0.05
+  "licensePlate": "DAT-098",
+  "typeId": 1
 }

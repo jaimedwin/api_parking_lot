@@ -1,8 +1,8 @@
-const { sequelize, Sequelize, DataTypes } = require('../models/index.cjs');
-const Vehicle = require('./vehicle.cjs');
+const { sequelize, Sequelize, DataTypes} = require('../models/index.cjs');
+const Vehicle = require('./vehicle.cjs').Vehicle;
 
 const Type = sequelize.define(
-  "Type",
+  "Types",
   {
     id: {
       allowNull: false,
@@ -35,12 +35,21 @@ const Type = sequelize.define(
   }
 );
 
+console.log("Dato1FromType: ", Vehicle);
+console.log("Dato2FromType: ", Type);
+
+Type.hasMany(Vehicle, { foreinkey: "id", targetKey: "typeId" });
+Vehicle.belongsTo(Type, { foreinkey: "typeId", targetId: "id" });
+
 /*
+Type.belongsTo(Vehicle, { foreinkey: "typeId", targetKey: "id" });
+
+/*
+Vehicle.belongsTo(Type, { foreinkey: "typeId", targetId: "id" });
 Type.hasMany(Vehicle, {
   foreinkey: "typeId",
   sourceKey: "id",
 });
-Vehicle.belongsTo(Type, { foreinkey: "typeId", targetId: "id" });
 */
 
 module.exports = { Type };

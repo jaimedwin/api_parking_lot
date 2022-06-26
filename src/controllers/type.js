@@ -1,7 +1,6 @@
-import pkg1 from '../models/type.cjs';
-import pkg2 from '../models/index.cjs';
-const { Type } = pkg1;
-const { Sequelize } = pkg2;
+import pkg from '../models/type.cjs';
+const { Type } = pkg;
+
 
 
 export async function getTypes(req, res) {
