@@ -1,31 +1,28 @@
 @api = http://localhost:4000/api/v1/type
 
-### get types
+### get all
 GET {{api}}
 
-### get type
+### get
 GET {{api}}/1
 
-### create type
+### create
 POST http://localhost:4000/api/v1/type/
 Content-Type: application/json
 
 { 
-  "title": "Vip4",
-  "costPerMinute": 0.10
+  "title": "Vip100",
+  "costPerMinute": 100.00
 }
 
-### get type
-GET {{api}}/3
-
-### delete type
+### delete
 DELETE {{api}}/13
 
-### update type
-PUT {{api}}/7
+### update
+PUT {{api}}/15
 Content-Type: application/json
 
 {
-  "title": "Vip21",
+  "title": "Vip240",
   "costPerMinute": 0.05
 }

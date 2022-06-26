@@ -1,5 +1,8 @@
-import pkg from '../models/type.cjs';
-const { Type } = pkg;
+import pkg1 from '../models/type.cjs';
+import pkg2 from '../models/index.cjs';
+const { Type } = pkg1;
+const { Sequelize } = pkg2;
+
 
 export async function getTypes(req, res) {
   try {
@@ -47,7 +50,7 @@ export async function updateType(req, res) {
       where: { id: id },
     });
 
-    console.log(type);
+    req.body["updatedAt"] = new Date();
     type.set(req.body);
 
     await type.save();
