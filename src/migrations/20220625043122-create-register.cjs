@@ -14,6 +14,10 @@ module.exports = {
       checkOutTime: {
         type: Sequelize.DATE
       },
+      timeInMinutes: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0.00
+      },
       collectMoney: {
         type: Sequelize.DECIMAL(15, 2),
         defaultValue: 0.00

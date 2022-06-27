@@ -2,24 +2,71 @@
 @port = 4000
 
 ### api-register-vehicle
-@api1 = http://localhost:{{port}}/api/v1/register-vehicle/
+@api = http://localhost:{{port}}/api/v1
 
 ### entryVehicleRecord 
-POST {{api1}}
+POST {{api}}/entry-vehicle-record/
 Content-Type: application/json
 
 { 
   "licensePlate": "YTQ-852" 
 }
 
+### entryVehicleRecord 
+POST {{api}}/entry-vehicle-record/
+Content-Type: application/json
+
+{ 
+  "licensePlate": "OUN-654" 
+}
+
+
 ### exitVehicleRecord
-PUT {{api1}}
+PUT {{api}}/exit-vehicle-record/
 Content-Type: application/json
 
 {
   "licensePlate": "YTQ-852"
 }
 
+### exitVehicleRecord
+PUT {{api}}/exit-vehicle-record/
+Content-Type: application/json
+
+{
+  "licensePlate": "OUN-654"
+}
+
+### registerOfficialVehicle 
+POST {{api}}/register-official-vehicle /
+Content-Type: application/json
+
+{ 
+  "licensePlate": "ZZZ-000" 
+}
+
+### registerResidentVehicle 
+POST {{api}}/register-resident-vehicle/
+Content-Type: application/json
+
+{ 
+  "licensePlate": "AAA-999" 
+}
+
+### startMonth 
+GET {{api}}/start-month/
+Content-Type: application/json
+
+{ 
+  "licensePlate": "AAA-999" 
+}
 
 
+### residentPayments 
+GET {{api}}/resident-payments/
+Content-Type: application/pdf
+
+{ 
+  "nameFile": "reporte_1.pdf" 
+}
 

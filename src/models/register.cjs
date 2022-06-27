@@ -15,6 +15,10 @@ const Register = sequelize.define(
     checkOutTime: {
       type: DataTypes.DATE
     },
+    timeInMinutes: {
+      type: Sequelize.INTEGER,
+      defaultValue: 0.00
+    },
     collectMoney: {
       type: DataTypes.DECIMAL(15, 2),
       defaultValue: 0.00
